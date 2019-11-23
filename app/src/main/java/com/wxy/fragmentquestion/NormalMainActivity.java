@@ -45,7 +45,7 @@ public class NormalMainActivity extends AppCompatActivity {
         Log.e("Activity ","onCreate");
         ButterKnife.bind(this);
         initFragment();
-        showFragment(oneFragment);
+//        showFragment(oneFragment);
     }
     private void initFragment() {
         oneFragment=(OneFragment)getSupportFragmentManager().findFragmentByTag(OneFragment.class.getName());
@@ -73,11 +73,10 @@ protected void onDestroy() {
     private void showFragment(Fragment fragment) {
         if (currentFragment!=fragment){
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-//                transaction.setCustomAnimations(R.anim.right_in,R.anim.left_out,R.anim.right_out,R.anim.left_in);
-                transaction.setCustomAnimations(R.anim.right_in,R.anim.right_out,R.anim.left_in,R.anim.left_out);
+                transaction.setCustomAnimations(R.anim.right_in,R.anim.left_out);
             transaction.hide(currentFragment);//  不是则隐藏
             currentFragment=fragment;
-            transaction.addToBackStack(currentFragment.getClass().getName());
+//            transaction.addToBackStack(currentFragment.getClass().getName());
             if (!fragment.isAdded()){
                 transaction.add(R.id.linear_fragment_content,fragment,fragment.getClass().getName()).show(fragment).commit();
             }else {

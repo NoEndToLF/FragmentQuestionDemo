@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navi_graph_main"
+    app:startDestination="@id/fragment_one"
+    tools:ignore="UnusedNavigation">
+<fragment
+    android:id="@+id/fragment_one"
+    android:name="com.wxy.fragmentquestion.fragment.OneFragment"
+    android:label="one frag"
+    tools:layout="@layout/fragment_one"
+    >
+    <action
+        android:id="@+id/action_fragment_one_to_fragment_two"
+        app:destination="@id/fragment_two"
+        app:enterAnim="@anim/right_in"
+        app:exitAnim="@anim/left_out"
+        app:popEnterAnim="@anim/left_in"
+        app:popExitAnim="@anim/right_out" />
+    <argument android:name="daTa" android:defaultValue="haha" app:argType="string"/>
+
+</fragment>
+    <fragment
+        android:id="@+id/fragment_two"
+        android:name="com.wxy.fragmentquestion.fragment.TwoFragment"
+        android:label="two frag"
+        tools:layout="@layout/fragment_two"
+        >
+        <action
+            android:id="@+id/action_fragment_two_to_fragment_three"
+            app:destination="@id/fragment_three"
+            app:enterAnim="@anim/right_in"
+            app:exitAnim="@anim/left_out"
+            app:popEnterAnim="@anim/left_in"
+            app:popExitAnim="@anim/right_out"/>
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_three"
+        android:name="com.wxy.fragmentquestion.fragment.ThreeFragment"
+        android:label="three frag"
+        tools:layout="@layout/fragment_three"
+        >
+        <action
+            android:id="@+id/action_fragment_three_to_fragment_four"
+            app:destination="@id/fragment_four"
+            app:enterAnim="@anim/right_in"
+            app:exitAnim="@anim/left_out"
+            app:popEnterAnim="@anim/left_in"
+            app:popExitAnim="@anim/right_out"/>
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_four"
+        android:name="com.wxy.fragmentquestion.fragment.FourFragment"
+        android:label="four frag"
+        tools:layout="@layout/fragment_four"
+        >
+    </fragment>
+</navigation>
